@@ -37,9 +37,20 @@ body{
     
     border-radius: 17.5%;
     background-color: #1F1F1F;
+
+    transition: border 0.05s;
+}
+
+.ToolSelected{
+    border: 0.5vmax solid #474747;
 }
 
 /* Tools */
+.ToolClickBox{
+    background-color: transparent;
+    z-index: 2;
+}
+
 .BrushTool{
     top: 12.5%;
 }
@@ -57,25 +68,63 @@ body{
 }
 
 /* Icons for Tools */
-.BrushTool_brush{
+.ToolIconDefaults{
     position: absolute;
     transform: translate(-50%, -50%);
     z-index: 1;
+}
 
+/* Brush Tool Icon */
+.BrushTool_brush{
     top: 15%;
     left: 42.2%;
     width: 15%;
-
 }
 
 .BrushTool_handle{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-
     top: 11%;
     left: 56%;
     width: 20%;
+}
+
+/* Bucket Tool Icon */
+.BucketTool_drop{
+    top: 32%;
+    left: 67%;
+    width: 11%;
+}
+
+.BucketTool_bucket{
+    top: 31.25%;
+    left: 47.5%;
+    width: 29%;
+}
+
+/* Line Tool Icon */
+.LineTool_line{
+    top: 50%;
+    left: 50%;
+    width: 32.5%;
+}
+
+.LineTool_anchors{
+    top: 50%;
+    left: 50%;
+    width: 32.5%;
+}
+
+/* Eraser Tool Icon */
+.EraserTool_line{
+    z-index: 3;
+    top: 71.5%;
+    left: 59.75%;
+    width: 15%;
+}
+
+.EraserTool_eraser{
+    top: 68.25%;
+    left: 50%;
+    width: 32.5%;
 }
 
 /* Color Selector */

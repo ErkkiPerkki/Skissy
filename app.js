@@ -4,9 +4,10 @@ document.addEventListener("DOMContentLoaded", function(){
     const ColorButton = document.getElementsByClassName("ColorButton")
     const RedButton = document.getElementById("Red")
     const ColorableIcons = document.getElementsByClassName("ColorableIcon")
+    const Tools = document.getElementsByClassName("Tool")
     const Colors = ["Red", "Green", "Blue"]
-
     let selectedButton = null;
+    let selectedTool = null;
 
     // Functions
     function DeselectColors() {
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     function ClearIconColors(icon) {
-        for (let j=0; j < 3; j++){
+        for (let j=0; j < Colors.length; j++){
             icon.classList.remove(`${Colors[j]}Filter`)
         }
     }
@@ -33,20 +34,39 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     } 
 
-    function SelectButton(button) {
+    function SelectColor(colorButton) {
         DeselectColors()
-        button.classList.add("Selected")
-        selectedButton = button
+        colorButton.classList.add("Selected")
+        selectedButton = colorButton
         ChangeIconColors()
     }
 
+    function DeselectTools(){
+        for (let i=0; i < Tools.length; i++){
+            Tools[i].classList.remove("ToolSelected")
+        }
+    }
+
+    function SelectTool(tool){
+        DeselectTools()
+        tool.classList.add("ToolSelected")
+        selectedTool = tool
+    }
+
     // Set Default Selected Color to Red
-    SelectButton(RedButton)
+    SelectColor(RedButton)
 
     // Connect onclick Event to Function
     for (let i = 0; i < ColorButton.length; i++) {
         ColorButton[i].onclick = function(){
-            SelectButton(ColorButton[i])
+            SelectColor(ColorButton[i])
+        }
+    }
+
+    for (let i=0; i < Tools.length; i++){
+        Tools[i].onclick = function(){
+            SelectTool(Tools[i])
+            console.log(selectedTool)
         }
     }
 
