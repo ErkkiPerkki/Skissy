@@ -1,0 +1,127 @@
+body{
+    background-color: #1A1A1A;
+}
+
+/* Core GUI */
+.SideBar{
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 54vh;
+    left: -12.5vh;
+
+    height: 92vh;
+    width: 25vh;
+    background-color: #262626;
+}
+
+.TopBar{
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 4%;
+    left: -50%;
+
+    height: 8vh;
+    width: 100%;
+    background-color: #373737;
+}
+
+.IconDefaults{
+    position: inherit;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    width: 55%;
+    height: 0;
+    padding-top: 55%;
+    left: 50%;
+    
+    border-radius: 17.5%;
+    background-color: #1F1F1F;
+}
+
+/* Tools */
+.BrushTool{
+    top: 12.5%;
+}
+
+.BucketTool{
+    top: 31.25%;
+}
+
+.LineTool{
+    top: 50%;
+}
+
+.EraserTool{
+    top: 68.25%;
+}
+
+/* Icons for Tools */
+.BrushTool_brush{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    top: 15%;
+    left: 42.2%;
+    width: 15%;
+
+}
+
+.BrushTool_handle{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    top: 11%;
+    left: 56%;
+    width: 20%;
+}
+
+/* Color Selector */
+.ColorContainer{
+    width: 85%;
+    height: 9%;
+    padding-top: 0%;
+    top: 87.5%;
+
+    border-radius: 0.9vmax;
+}
+
+.ColorDefaults{
+    width: 25%;
+    padding-top: 25%;
+    top: 50%;
+    border-radius: 0.75vmax;
+    transition: border 0.05s;
+}
+
+.Selected{
+    border: 0.3vmax solid white;
+}
+
+.Color1{
+    left: calc((100% / 6) + 3.5%);
+    background-color: #E35E4C;
+}
+
+.Color2{
+    left: 50%;
+    background-color: #62D33A;
+}
+
+.Color3{
+    left: calc((100% - (100% / 6)) - 3.5%);
+    background-color: #4C9AE3;
+}
+
+/* Color Filters */
+.RedFilter{
+    filter: invert(52%) sepia(37.5%) saturate(2500%) hue-rotate(327deg) brightness(100%) contrast(85%);
+}
+.GreenFilter{
+    filter: invert(25%) sepia(57%) saturate(600%) hue-rotate(54deg) brightness(95%) contrast(80%);
+}
+.BlueFilter{
+    filter: invert(42%) sepia(71%) saturate(2345%) hue-rotate(184deg) brightness(92%) contrast(85%);
+}
