@@ -19,18 +19,16 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 
-    function ClearIconColors() {
-        for (let i=0; i < ColorableIcons.length; i++){
-            for (let j=0; j < 3; j++){
-                ColorableIcons[i].classList.remove(`${Colors[j]}Filter`)
-            }
+    function ClearIconColors(icon) {
+        for (let j=0; j < 3; j++){
+            icon.classList.remove(`${Colors[j]}Filter`)
         }
     }
 
     function ChangeIconColors() {
         for (let i=0; i < ColorableIcons.length; i++){
             console.log(ColorableIcons[i])
-            ClearIconColors()
+            ClearIconColors(ColorableIcons[i])
             ColorableIcons[i].classList.add(`${selectedButton.id}Filter`)
         }
     } 
