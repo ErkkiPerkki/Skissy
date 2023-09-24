@@ -13,27 +13,29 @@ body{
     width: 100%;
     height: 100%;
 
-    background-color: #1A1A1A;
+    background-image: url(img/Other/SkissyBackgroundDots.png);
+    background-size: 2.5%;
+    background-position-y:2.5% ;
 }
 
 .SideBar{
     position: absolute;
     transform: translate(50%, -50%);
-    top: 54vh;
-    left: -12.5vh;
+    top: 52vh;
+    left: -10vh;
 
-    height: 92vh;
-    width: 25vh;
+    height: 97vh;
+    width: 20vh;
     background-color: #262626;
 }
 
 .TopBar{
     position: absolute;
     transform: translate(50%, -50%);
-    top: 4%;
+    top: 3.5vh;
     left: -50%;
 
-    height: 8vh;
+    height: 7vh;
     width: 100%;
     background-color: #373737;
 }
@@ -55,7 +57,7 @@ body{
 }
 
 .ToolSelected{
-    border: 0.5vmax solid #474747;
+    border: 0.4vmax solid #474747;
 }
 
 /* Tools */
@@ -65,19 +67,19 @@ body{
 }
 
 .BrushTool{
-    top: 12.5%;
+    top: 15%;
 }
 
 .FillTool{
-    top: 31.25%;
+    top: 30%;
 }
 
 .LineTool{
-    top: 50%;
+    top: 45%;
 }
 
 .EraserTool{
-    top: 68.25%;
+    top: 60%;
 }
 
 /* Icons for Tools */
@@ -85,43 +87,44 @@ body{
     position: absolute;
     transform: translate(-50%, -50%);
     z-index: 1;
+    transition: filter 0.05s;
 }
 
 /* Brush Tool Icon */
 .BrushTool_brush{
-    top: 15%;
+    top: 17%;
     left: 42.2%;
     width: 15%;
 }
 
 .BrushTool_handle{
-    top: 11%;
-    left: 56%;
+    top: 14.2%;
+    left: 55.8%;
     width: 20%;
 }
 
 /* Bucket Tool Icon */
 .FillTool_drop{
-    top: 32%;
+    top: 30.5%;
     left: 67%;
     width: 11%;
 }
 
 .FillTool_bucket{
-    top: 31.25%;
+    top: 30%;
     left: 47.5%;
     width: 29%;
 }
 
 /* Line Tool Icon */
 .LineTool_line{
-    top: 50%;
+    top: 45%;
     left: 50%;
     width: 32.5%;
 }
 
 .LineTool_anchors{
-    top: 50%;
+    top: 45%;
     left: 50%;
     width: 32.5%;
 }
@@ -129,37 +132,78 @@ body{
 /* Eraser Tool Icon */
 .EraserTool_line{
     z-index: 3;
-    top: 71.5%;
+    top: 62.5%;
     left: 59.75%;
-    width: 15%;
+    width: 16%;
 }
 
 .EraserTool_eraser{
-    top: 68.25%;
+    top: 60%;
     left: 50%;
     width: 32.5%;
 }
 
-/* Color Selector */
-.ColorContainer{
+/* Stroke Size Selector */
+.StrokeSizeContainer{
     width: 85%;
-    height: 9%;
+    height: 6.5%;
     padding-top: 0%;
-    top: 87.5%;
+    top: 74%;
 
     border-radius: 0.9vmax;
 }
 
-.ColorDefaults{
-    width: 25%;
-    padding-top: 25%;
+.StrokeDefaults{
+    width: 27%;
+    padding-top: 27%;
     top: 50%;
-    border-radius: 0.75vmax;
+    border-radius: 0.7vmax;
+    background-color: #1A1A1A;
+    background-position: center;
+    background-size: 56.25%;
+    background-repeat: no-repeat;
     transition: border 0.05s;
 }
 
-.Selected{
-    border: 0.3vmax solid white;
+.StrokeSelected{
+    border: 0.15vmax solid white;
+}
+
+.Stroke1{
+    left: calc((100% / 6) + 3.5%);
+    background-image: url(img/StrokeSizes/Small.png);
+}
+
+.Stroke2{
+    left: 50%;
+    background-image: url(img/StrokeSizes/Medium.png);
+}
+
+.Stroke3{
+    left: calc((100% - (100% / 6)) - 3.5%);
+    background-image: url(img/StrokeSizes/Large.png);
+}
+
+/* Color Selector */
+.ColorContainer{
+    width: 87.5%;
+    height: 7.5%;
+    padding-top: 0%;
+    top: 82%;
+
+    border-radius: 0.7vmax;
+}
+
+.ColorDefaults{
+    width: 26%;
+    padding-top: 26%;
+    top: 50%;
+    border-radius: 0.65vmax;
+    transition: border 0.05s;
+}
+
+.ColorSelected{
+    border: 0.25vmax solid white;
 }
 
 .Color1{

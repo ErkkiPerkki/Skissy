@@ -27,6 +27,21 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 
+    function ParseStrokeSize(){
+        var strokeSize = shared.currentStrokeSize
+        switch (strokeSize){
+            case "Small":
+                return 3
+            case "Medium":
+                return 5
+            case "Large":
+                return 7
+            
+            default:
+                return
+        }
+    }
+
     function GetDistanceBetweenPoints(pointA, pointB){
         var deltaX = pointA.x - pointB.x
         var deltaY = pointA.y - pointB.y
@@ -45,11 +60,14 @@ document.addEventListener("DOMContentLoaded", function(){
     function DrawLine(pos){
         if (!previousPoint){return}
 
+        var strokeSize = ParseStrokeSize()
+        var strokeColor = ParseColor()
+
         Context.beginPath();
         Context.moveTo(pos.x * CANVAS_SCALING, pos.y * CANVAS_SCALING)
         Context.lineTo(previousPoint.x * CANVAS_SCALING, previousPoint.y * CANVAS_SCALING)
-        Context.lineWidth = 3 * CANVAS_SCALING
-        Context.strokeStyle = `rgb(${ParseColor()})`
+        Context.lineWidth = strokeSize * CANVAS_SCALING
+        Context.strokeStyle = `rgb(${strokeColor})`
         Context.stroke()
         currentSegment.push(pos)
 
@@ -57,8 +75,8 @@ document.addEventListener("DOMContentLoaded", function(){
         Context.beginPath();
         Context.moveTo(pos.x * CANVAS_SCALING, pos.y * CANVAS_SCALING)
         Context.lineTo(previousPoint.x * CANVAS_SCALING, previousPoint.y * CANVAS_SCALING)
-        Context.lineWidth = 3 * CANVAS_SCALING
-        Context.strokeStyle = `rgb(${ParseColor()}, 0.5)`
+        Context.lineWidth = (strokeSize + 2) * CANVAS_SCALING
+        Context.strokeStyle = `rgb(${strokeColor}, 0.75)`
         Context.stroke()
     }
 
@@ -71,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 previousPoint = point
             })
         });
+        previousPoint = null
     }
 
     function ResizeCanvas(){
