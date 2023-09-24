@@ -6,34 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skissy</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    <script src="GUI.js"></script>
+    <script src="draw.js"></script>
 </head>
 
 <body>
     
+    <!-- Canvas -->
+    <canvas width="100%" height="100%" class="Canvas" id="Canvas"></canvas>
+
+    <!-- Side Bar -->
     <div class="SideBar">
 
         <!-- Tools -->
         <div class="BrushTool IconDefaults"></div>
-        <div class="IconDefaults BrushTool ToolClickBox Tool"></div>
+        <div class="IconDefaults BrushTool ToolClickBox Tool" id="BrushTool"></div>
         <img src="img/BrushTool/brush.png" class="ColorableIcon BrushTool_brush ToolIconDefaults">
         <img src="img/BrushTool/handle.png" class="BrushTool_handle ToolIconDefaults">
 
-        <div class="BucketTool IconDefaults"></div>
-        <div class="IconDefaults BucketTool ToolClickBox Tool"></div>
-        <img src="img/BucketTool/drop.png" class="ColorableIcon BucketTool_drop ToolIconDefaults">
-        <img src="img/BucketTool/bucket.png" class="BucketTool_bucket ToolIconDefaults">
+        <div class="FillTool IconDefaults"></div>
+        <div class="IconDefaults FillTool ToolClickBox Tool" id="FillTool"></div>
+        <img src="img/FillTool/drop.png" class="ColorableIcon FillTool_drop ToolIconDefaults">
+        <img src="img/FillTool/bucket.png" class="FillTool_bucket ToolIconDefaults">
         
         <div class="LineTool IconDefaults"></div>
-        <div class="IconDefaults LineTool ToolClickBox Tool"></div>
+        <div class="IconDefaults LineTool ToolClickBox Tool" id="LineTool"></div>
         <img src="img/LineTool/line.png" class="ColorableIcon LineTool_line ToolIconDefaults">
         <img src="img/LineTool/anchors.png" class="LineTool_anchors ToolIconDefaults">
         
         <div class="EraserTool IconDefaults"></div>
-        <div class="IconDefaults EraserTool ToolClickBox Tool"></div>
+        <div class="IconDefaults EraserTool ToolClickBox Tool" id="EraserTool"></div>
         <img src="img/EraserTool/line.png" class="ColorableIcon EraserTool_line ToolIconDefaults">
-        <img src="img/EraserTool/eraser.png" class="EraserTool_eraser ToolIconDefaults">
-        
+        <img src="img/EraserTool/eraser.png" class="EraserTool_eraser ToolIconDefaults">        
 
         <!-- Colors -->
         <div class="ColorContainer IconDefaults">
@@ -41,7 +45,6 @@
             <div class="Color2 IconDefaults ColorDefaults ColorButton" id="Green"></div>
             <div class="Color3 IconDefaults ColorDefaults ColorButton" id="Blue"></div>
         </div>
-
     </div>
 
     <div class="TopBar"></div>
